@@ -80,8 +80,9 @@ function update(dt){ player.x += player.vx * player.speed; if(player.x < 0) play
         score++; scoreTimer = 0; scoreEl.textContent = score;
         if (score >= 4) {
             const rewards = [
-                "https://yourusername.github.io/path/mario.mcworld",
-                "https://yourusername.github.io/path/TormentDifficulty.mcpack"
+
+                "https://coderyan6-byte.github.io/HazardRun/mario.mcworld",
+                "https://coderyan6-byte.github.io/HazardRun/TormentDifficulty.mcpack"
             ];
             const randomReward = rewards[Math.floor(Math.random() * rewards.length)];
             window.location.href = randomReward;
@@ -112,3 +113,4 @@ draw();
 </script>
 </body>
 </html>
+
