@@ -76,7 +76,15 @@ function draw(){ ctx.clearRect(0,0,canvas.width,canvas.height); ctx.drawImage(pl
 function update(dt){ player.x += player.vx * player.speed; if(player.x < 0) player.x = 0; if(player.x + player.w > canvas.width) player.x = canvas.width - player.w;
   if(Math.random() < 0.05 + Math.min(0.4, score*0.002)) spawnHazard();
   for(let i=hazards.length-1;i>=0;i--){ const h = hazards[i]; h.y += h.vy; if(h.y > canvas.height+50) hazards.splice(i,1); if(rectsOverlap(player, h)){ die(); return; } }
-  scoreTimer += dt; if(scoreTimer >= 5000){ score++; scoreTimer = 0; scoreEl.textContent = score; if(score >= 999) window.location.href = "https://www.youtube.com/watch?v=fQIQaPq-khY"; }
+  scoreTimer += dt; if(scoreTimer >= 5000){ score++; scoreTimer = 0; scoreEl.textContent = score; if (score >= 4) {
+    const rewards = [
+        "https://yourusername.github.io/path/mario.mcworld",
+        "https://yourusername.github.io/path/TormentDifficulty.mcpack"
+    ];
+    const randomReward = rewards[Math.floor(Math.random() * rewards.length)];
+    window.location.href = randomReward;
+}
+
 }
 function loop(now){ const dt = now - t0; t0 = now; update(dt); draw(); if(running) rafId = requestAnimationFrame(loop); }
 function start(){ if(isPermaDead()) { lockUI(); return; } if(running) return; running = true; reset(); startBtn.textContent = 'Running…'; startBtn.disabled = true; t0 = performance.now(); rafId = requestAnimationFrame(loop); }
@@ -101,3 +109,4 @@ draw();
 </script>
 </body>
 </html>
+
