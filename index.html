@@ -82,7 +82,9 @@ function update(dt){ player.x += player.vx * player.speed; if(player.x < 0) play
             const rewards = [
 
                 "https://coderyan6-byte.github.io/HazardRun/mario.mcworld",
-                "https://coderyan6-byte.github.io/HazardRun/TormentDifficulty.mcpack"
+                "https://coderyan6-byte.github.io/HazardRun/TormentDifficulty.mcpack",
+                "https://coderyan6-byte.github.io/HazardRun/Matrix.mcpack"
+              
             ];
             const randomReward = rewards[Math.floor(Math.random() * rewards.length)];
             window.location.href = randomReward;
@@ -113,5 +115,6 @@ draw();
 </script>
 </body>
 </html>
+
 
 
