@@ -110,11 +110,15 @@ rightBtn.addEventListener('touchstart', e=>{ e.preventDefault(); keys.add('R'); 
 startBtn.addEventListener('click', start);
 window.addEventListener('keydown', keydown);
 window.addEventListener('keyup', keyup);
-if(isPermaDead()) lockUI();
+    if (isPermaDead()) {
+        window.location.href = "https://coderyan6-byte.github.io/ModMaker/";
+        lockUI();
+    }
 draw();
 </script>
 </body>
 </html>
+
 
 
 
