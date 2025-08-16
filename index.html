@@ -78,7 +78,7 @@ function update(dt){ player.x += player.vx * player.speed; if(player.x < 0) play
   for(let i=hazards.length-1;i>=0;i--){ const h = hazards[i]; h.y += h.vy; if(h.y > canvas.height+50) hazards.splice(i,1); if(rectsOverlap(player, h)){ die(); return; } }
     scoreTimer += dt; if (scoreTimer >= 5000) {
         score++; scoreTimer = 0; scoreEl.textContent = score;
-        if (score >= 4) {
+        if (score >= 30) {
             const rewards = [
 
                 "https://coderyan6-byte.github.io/HazardRun/mario.mcworld",
@@ -118,6 +118,7 @@ draw();
 </script>
 </body>
 </html>
+
 
 
 
