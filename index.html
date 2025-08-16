@@ -49,7 +49,7 @@
 </div>
 
 <script>
-const DEATH_KEY = "one_life_perma_dead_v1";
+const DEATH_KEY = "one_life_perma_dead_v2";
 function isPermaDead(){ try{ return localStorage.getItem(DEATH_KEY)==="1"; }catch{} return document.cookie.split("; ").some(c=>c.startsWith(DEATH_KEY+"=1")); }
 function setPermaDead(){ try{ localStorage.setItem(DEATH_KEY, "1"); }catch{} document.cookie = `${DEATH_KEY}=1; expires=Fri, 31 Dec 2099 23:59:59 GMT; path=/`; }
 
@@ -118,6 +118,7 @@ draw();
 </script>
 </body>
 </html>
+
 
 
 
